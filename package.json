@@ -1,0 +1,18 @@
+{
+  "name": "cooper-hewitt-degradebot",
+  "version": "0.1.0",
+  "description":
+    "A bot that will post a degraded image from the Cooper Hewitt museum.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "John West <john@beebe-west.com> (http://beebe-west.com/john)",
+  "license": "MIT",
+  "dependencies": {
+    "asciist": "https://github.com/jswest/asciist/archive/v1.tar.gz",
+    "request": "^2.88.0",
+    "twit": "^2.2.11"
+  },
+  "homepage": "https://twitter.com/design_degradr"
+}
