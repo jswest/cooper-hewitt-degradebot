@@ -25,4 +25,5 @@ NB: you might have some trouble with this installing the Asciist. Run `npm insta
 ## Running it
 
 -   Run `node index.js`.
--   If you want to run it on a server, deploy it (I can't help you there), and make a cron job for it.
+-   If you want to run it on a server, deploy it (I can't help you there).
+-   Use `screen` or similar, then run `npm run start`.
