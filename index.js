@@ -1,6 +1,7 @@
 const { Asciize, Degradr } = require("asciist");
 const config = require("./config.json");
 const fs = require("fs");
+const path = require("path");
 const request = require("request");
 const Twit = require("twit");
 
@@ -58,19 +59,51 @@ const degradeImage = options => {
 		const { fileName } = options;
 		const fileNameArray = fileName.split(".");
 		const degradr = new Degradr();
+		const gifFilePath = path.join(
+			process.cwd(),
+			`.${fileNameArray[1]}.gif`
+		);
 		degradr
 			.run({
 				inputFilePath: fileName,
-				incriment: 40,
-				maxPixelSize: 800,
-				minSize: 10,
-				outputFilePath: fileName + ".gif",
-				size: 410
+				maxPixelSize: 1000,
+				outputFilePath: gifFilePath,
+				sizes: [
+					350,
+					300,
+					250,
+					210,
+					170,
+					140,
+					110,
+					90,
+					70,
+					60,
+					50,
+					45,
+					40,
+					35,
+					30,
+					25,
+					20,
+					15,
+					10,
+					9,
+					8,
+					7,
+					6,
+					5,
+					4,
+					3,
+					2,
+					1
+				]
 			})
 			.then(() => {
-				options.outputFilePath = fileName + ".gif";
+				options.outputFilePath = gifFilePath;
 				resolve(options);
-			});
+			})
+			.catch(err => reject(err));
 	});
 };
 
